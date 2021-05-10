@@ -68,7 +68,7 @@ Deletion
 
 Operations  
 1. `+` operator joins two lists into a single list  
-2. in operator checks if an item is in a list  
+2. `in` operator checks if an item is in a list  
 
 Methods  
 mylist.append(item)  note: item can be another list
