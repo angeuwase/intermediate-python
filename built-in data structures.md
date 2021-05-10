@@ -111,25 +111,13 @@ To not change original list:
 new_list = sorted(mylist)
 
 ```
-
-
-
-
-
-
-
-
-
-## Dictionaries
-
-
-
-
+<hr>
 
 ## Tuples
 -A tuple is an immutable data structure that stores multiple values, separated by a comma, gathered under one variable name and accessed via indexing  
 -Tuples are very useful if we want a function to return multiple values  
 -Because they are immutable, tuples can be used as dictionary keys  
+-Working with tuples can be more efficient than working with lists (for same items, a list will take up more bytes of memory and take longer to create)  
 
 Creation  
 1. Comma separated items in round brackets
@@ -186,13 +174,18 @@ Hi, Kate
 Hi, Ellie
 ```
 
-
-
 Methods  
 mytuple.count(item)  
 mytuple.index(item)  
 len(mytuple)  
 min(mytuple)/ max(mytuple)  The functions only work if the items in the tuple are of the same data type otherwise you get a TypeError  
+
+<hr>
+
+## Dictionaries
+
+
+
 
 
 
