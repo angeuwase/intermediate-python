@@ -37,8 +37,8 @@ Operations
 Methods  
 Boolean  
 astring.isalpha()  
-astring.isdigit()  
-astring.isnumeric()  
+astring.isdigit()         subscript, superscript   
+astring.isnumeric()       roman numerals, currency numerators, fractions  
 astring.isdecimal()  
 astring.isspace()  
 astring.startswith(prefix[, start[, end]])  
@@ -76,15 +76,7 @@ astring.find(substring[, start[, end]] )
 astring.rfind(substring[, start[, end]] )  
 astring.index(substring[, start[, end]] )  
 astring.rindex(substring[, start[, end]] )  
-
-
-
-
-
-
-    
-
-
+<hr>
 
 ## Lists
 - Mutable data structure that can store multiple values under one name, accessible via indeces.  
@@ -382,6 +374,8 @@ mydictionary.update(a=5)
 mydictionary.popitem()  
 mydictionary.pop(key,default) Removes element with key value given by key and returns its value. If the key isnt found it returns value given by default.  
 mydictionary.setdefault(key,value) Returns the value of the key if its in the dictionary, otherwise it inserts a key with value set to value and returns that value. Value is optional, if its not specified default value is None and the method will return None  
+
+<hr>
 
 ## Sets
 -An unordered collection of unique items  
