@@ -68,6 +68,12 @@ Deletion
 Operations  
 1. `+` operator joins two lists into a single list  
 2. `in` operator checks if an item is in a list  
+3. can iterate over items in the list using for loop:
+```
+for item in mylist:
+    print(i)
+```
+4. check how many items are in the list using `len()` function
 
 Methods  
 mylist.append(item)  note: item can be another list
