@@ -74,6 +74,7 @@ for item in mylist:
     print(i)
 ```
 4. check how many items are in the list using `len()` function
+5. Slicing: mylist[start_included:end_excluded:interval]
 
 Methods  
 mylist.append(item)  note: item can be another list
@@ -86,7 +87,7 @@ mylist.index(element, start, end)
 mylist.count(element)  
 mylist.reverse()  
 newlist= mylist.copy()  Returns a shallow copy of mylist. The copy needs to be assigned to a variable to be accessed. The benefit of using the copy() method is that if newlist gets modified mylist will remain unchanged.  
-mylist.sort(key=...., reverse=...)  
+mylist.sort(key=...., reverse=...)  Sorts the list in place  
 
 ```
 #sorting a list of tuples by their second element
@@ -106,6 +107,9 @@ mylist.sort(key=...., reverse=...)
 >>> mylist
 ['a', 'b', 'macOS', 'Linux', 'Windows']
 
+To not change original list:
+new_list = sorted(mylist)
+
 ```
 
 
@@ -123,6 +127,73 @@ mylist.sort(key=...., reverse=...)
 
 
 ## Tuples
+-A tuple is an immutable data structure that stores multiple values, separated by a comma, gathered under one variable name and accessed via indexing  
+-Tuples are very useful if we want a function to return multiple values  
+-Because they are immutable, tuples can be used as dictionary keys  
+
+Creation  
+1. Comma separated items in round brackets
+2. tuple() function
+```
+mytuple = ('a', 'b')
+```
+
+Insertion/Update/ Deletion  
+-Tuples are immutable, so its elements cant be changed once they have been declared. However, if the element is a mutable data type like a string, its individual items (the nested items of the tuple) can be changed  
+-We can also change a tuple by reassigning it a different value  
+-We cannot delete or remove items from a tuple (if you try it will result in a TypeError)  
+-It is possible to delete the entire tuple using the del keyword: del mytuple  
+
+Operations    
+1. Unpacking tuple elements by assigning them to a specific variable
+2. The + operator can be used to join two two tuples to form a new larger tuple
+3. The * operator can be used to create a new tuple where the elements in a tuple are repeated a given number of times
+4. The in operator can be used to check membership
+5. The ==, > and < operatirs can be used to compare tuples in the same way that we compare other sequences
+6. We can iterate through items in a tuple using a for loop
+```
+#unpacking
+>>> n_tuple = ("mouse", [8, 4, 6], (1, 2, 3))
+>>> a,b,c= n_tuple
+>>> print(a)
+mouse
+>>> print(b)
+[8, 4, 6]
+>>> print(c)
+(1, 2, 3)
+
+#concatenation
+>>> print((1, 2, 3) + (4, 5, 6))
+(1, 2, 3, 4, 5, 6)
+
+#repetition
+>>> print(("Repeat", "hi") * 3)
+('Repeat', 'hi', 'Repeat', 'hi', 'Repeat', 'hi')
+
+#set membership
+>>> mytuple= ((1, 2, 3),(4, 5, 6))
+>>> print( 2 in mytuple)
+False
+>>> print( (4,5,6) in mytuple)
+True
+
+#iterating using a for loop
+>>> names= ("John", "Kate", "Ellie")
+>>> for name in names:
+	print("Hi,", name)
+Hi, John
+Hi, Kate
+Hi, Ellie
+```
+
+
+
+Methods  
+mytuple.count(item)  
+mytuple.index(item)  
+len(mytuple)  
+min(mytuple)/ max(mytuple)  The functions only work if the items in the tuple are of the same data type otherwise you get a TypeError  
+
 
 
 
