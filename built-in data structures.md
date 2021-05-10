@@ -1,7 +1,7 @@
 # Built-in Data Structures Notes
 
 ## Summary
-Strings:  
+Strings: Immutable data type uses for text representation (ordered sequence of unicode characters)  
 Lists: Mutable data structure that can store multiple values under one name, accessible via indeces.  
 Dictionaries: An unordered collection of items composed of key-value pairs where a key is entered to access a value. Mutable.   
 Turples: A tuple is an immutable data structure that stores multiple values, separated by a comma, gathered under one variable name and accessed via indexing  
