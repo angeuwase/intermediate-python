@@ -1,7 +1,88 @@
 # Built-in Data Structures Notes
 
-## Strings
+## Summary
+Strings:  
+Lists: Mutable data structure that can store multiple values under one name, accessible via indeces.  
+Dictionaries: An unordered collection of items composed of key-value pairs where a key is entered to access a value. Mutable.   
+Turples: A tuple is an immutable data structure that stores multiple values, separated by a comma, gathered under one variable name and accessed via indexing  
+Sets: An unordered collection of unique items. Immutable (frozenset) and mutable (set)   
 
+## Strings
+-An ordered sequence of unicode characters. Immutable data type uses for text representation.    
+-A character is the smallest unit of text.   
+-Unicode is the computing standard for encoding and decoding text. It defines what hexadecimal code is associated with each character so that text can appear uniform on the internet.  
+
+Creation  
+Quotation marks  
+
+Access  
+Indexing and slicing  
+
+Deletion  
+-Can only delete the whole string, not individual characters of a string. To do the latter you need to create a new string with the unwanted characters removed  
+
+Operations  
+-Concatenation: join 2 strings using the `+` operator  
+-Repeating a string using the `*` operator  
+-Comparison using the inequality and equality operators.   
+    -2 strings are equal if they contain the same characters in the same order  
+    -A string is greater than another string if it comes later alphabetically (ie the character that has the greatest ordinal value is the greater one)  
+    -Python processes upper case and lower case letters differently. Upper case letters come first, then lower case letters  
+    -`ord(char)` returns the ordinal value of a character. 
+    -`char(ord_value)` returns the character associated with a given ordinal value  
+    -A to Z: 65 to 90  
+    -a to z: 97 to 122  
+    -position of a letter in the alphabet (lower case) = ord_value - 96  
+    
+Methods  
+Boolean  
+astring.isalpha()  
+astring.isdigit()  
+astring.isnumeric()  
+astring.isdecimal()  
+astring.isspace()  
+astring.startswith(prefix[, start[, end]])  
+astring.endswith(suffix[, start[, end]])  
+astring.islower()  
+astring.isupper()  
+astring.istitle()   
+astring.isprintable()   
+astring.isidentifier()    
+astring.isalnum()    
+
+Formatting  
+astring.capitalize()  
+astring.lower()  
+astring.upper()  
+astring.title()  
+astring.swapcase()  
+astring.casefold()  
+astring.center(width [,fillchar])  
+astring.rjust(width [,fillchar])  
+astring.ljust(width [,fillchar])  
+astring.zfill(width)  
+astring.lstrip([chars])  
+astring.rstrip([chars])  
+astring.strip([chars])  
+astring.expandtabs(tabsize)  
+separator.join(iterable)  
+astring.rsplit([separator [, maxsplit]])  
+astring.splitlines([keepends])  
+astring.split([separator [, maxsplit]])  
+astring.format(item1, item2,item3)  
+astring.replace(old, new [, count])   
+astring.count(substring, start=..., end=...)  
+astring.find(substring[, start[, end]] )  
+astring.rfind(substring[, start[, end]] )  
+astring.index(substring[, start[, end]] )  
+astring.rindex(substring[, start[, end]] )  
+
+
+
+
+
+
+    
 
 
 
@@ -303,4 +384,97 @@ mydictionary.pop(key,default) Removes element with key value given by key and re
 mydictionary.setdefault(key,value) Returns the value of the key if its in the dictionary, otherwise it inserts a key with value set to value and returns that value. Value is optional, if its not specified default value is None and the method will return None  
 
 ## Sets
+-An unordered collection of unique items  
+-Sets are useful for performing mathematical operations like union, intersection, symmetric difference and complement.  
+
+Creation  
+-There are two types of set objects in python: the mutable (hashable) set object and the immutable (unhashable) frozenset object. Unhashable/immutable means that once it is created, its values cannot be altered.  
+-Sets can be created by placing all the elements inside curly brackets separated by a comma or by using the built-in set() / frozenset() functions.  
+-To create an empty set you can't use an empty curly bracket as python will interpret that as an empty dictionary. To create an empty set we use the set() /frozenset() function without any argument.  
+-Frozensets operate exactly like a set except that they dont allow methods/operations that change the set eg add(), clear(), pop(), etc. Frozen sets are useful because they can be used as a dictionary key. They can also be used as an element of another set  
+-Every set element is unique (no duplicates. Any duplicates that are present will be discarded) and immutable (ie set elements can only be str, float, int, bool, decimal, tuple not dictionary or list). If you include a list or dictionary as a set element you will get a TypeError   
+-The set itself is mutable- we can add or remove elements from it.  
+-We can make a set from a list or any other data type using the set() function  
+
+Insertion/ Changing  
+-We can add a single element to the set using the add() method. Its argument will be the element we want to add to the set.  
+-We can add multiple elements to the set using the update() method. Its argument will be the elements we want to add to the set, separated by a comma. The update method can take tuples, lists, strings and other sets as its argument.  
+-In both cases any duplicates will be discarded.  
+
+Deletion  
+-There are two methods we can use to remove a specific element from a set: discard() and remove()  
+-The discard method leaves the set unchanged if it doesnt find the target element  
+-The remove method will raise a KeyError if the target element is not in the set  
+-We can remove a random element from the set using the pop() method. Its is completely arbitrary- there is no way of knowing which element will be popped.  
+-We can remove all the items in a set using the clear() method.  
+
+Operations  
+-Sets are used to carry out mathematical operations like union, intersection, difference and symmetric difference. These can be carried out using operators or set methods. When you use operators both arguments have to be sets, however when you use the set methods the arguments can be any iterable type. Example: setA-[1,2,3] would give a TypeError while setA.difference([1,2,3]) would give a result.  
+-Union is the set of elements from both sets. It is performed using the | operator or using the union() method.  
+-Intersection is the set of elements that are common to both sets. It is performed using the & operator or the intersection() method.  
+-Difference of set A from B (A-B) is the set of elements that occur in A but not B. Difference of set B from A (B-A) is the set of elements that occur in B but not A. Set difference is performed using the - operator or the difference() method.  
+-Set symmetric difference is the set of elements that occur in either A or B but not both (ie union excluding the intersection). Set symmetric difference is performed using the `^` operator or symmetric_difference() method.   
+```
+>>> A = {1, 2, 3, 4, 5}
+>>> B = {4, 5, 6, 7, 8}
+
+#union
+>>> C= A.union(B)
+>>> print(C)
+{1, 2, 3, 4, 5, 6, 7, 8}
+>>> D=A|B
+>>> print(D)
+{1, 2, 3, 4, 5, 6, 7, 8}
+
+#intersection
+>>> C= A&B
+>>> print(C)
+{4, 5}
+>>> D= A.intersection(B)
+>>> print(D)
+{4, 5}
+
+#difference
+>>> C= A-B
+>>> print(C)
+{1, 2, 3}
+>>> D= A.difference(B)
+>>> print(D)
+{1, 2, 3}
+
+#symmetric difference
+>>> C=A^B
+>>> print(C)
+{1, 2, 3, 6, 7, 8}
+>>> D= A.symmetric_difference(B)
+>>> print(D)
+{1, 2, 3, 6, 7, 8}
+```
+Methods  
+Mutable sets only:  
+mySet.add(newElement)  
+mySet.update(items)  
+mySet.clear()  
+mySet.discard(anElement)  
+mySet.remove(anElement)  
+mySet.pop()  
+setA.difference_update(setB)  
+setA.intersection_update(setB)  
+setA.symmetric_difference_update(setB)  
+
+Both types:  
+len(mySet)  
+mySet.copy()  
+setA.difference(setB)  
+setA.intersection(setB)  
+setA.symmetric_difference(setB)  
+setA.union(setB)  
+setA.issuperset(setB)  
+setA.issubset(setB)  
+setA.isdisjoint(setB)  
+
+
+
+
+
 
