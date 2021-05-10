@@ -47,7 +47,6 @@ Deletion
 2. del keyword (can remove 1 single item by passing its index or a range of items)
 3. remove method (removes first occurrence of the value given in the argument. ValueError if value is not in the list)
 4. clear method (returns an empty list object)
-5. 
 ```
 >>> odd
 [2, 2, 6, 5, 8, 5, 2, 3, 4]
